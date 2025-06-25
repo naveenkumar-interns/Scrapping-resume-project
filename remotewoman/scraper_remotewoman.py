@@ -80,9 +80,3 @@ if __name__ == "__main__":
 
 
 
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/naveenkumar-interns/Scrapping-resume-project.git
-git push -u origin main
