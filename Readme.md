@@ -1,81 +1,78 @@
+# Job Scraping Project
 
-Job Scraping Project
-Overview
-This project contains six web scraping scripts to extract job listings from various online platforms: Arc.dev, General, Jobspresso, Pangian, Remote Woman, and We Work Remotely, with an additional folder for Working Nomads. Each script uses Playwright for browser automation and Python for scripting, collecting details like job title, company, salary range, skills, location, and more. The scraped data is saved in JSON format for further use.
-Features
+## Overview
+This project includes six web scraping scripts to extract job listings from various platforms: Arc.dev, General, Jobspresso, Pangian, Remote Woman, and We Work Remotely, with an additional scraper for Working Nomads. Using Playwright and Python, each script collects job details like title, company, salary range, skills, location, and more, saving the data in JSON format.
 
-Scrapes job listings from six distinct job boards.
-Extracts key job details:
-Job title
-Company name
-Job type
-Experience level
-Salary range
-Required skills
-Location
-Hiring status
-Job URL and company logo URL
+## Features
+- Scrapes jobs from six unique job boards.
+- Extracts:
+  - Job title
+  - Company name
+  - Job type
+  - Experience level
+  - Salary range
+  - Required skills
+  - Location
+  - Hiring status
+  - Job URL and logo URL
+- Saves data as JSON files.
+- Includes error handling.
+- Uses asynchronous execution.
 
+## Prerequisites
+- **Python 3.8+**
+- **Playwright** with browser binaries
+- Required packages:
+  - `playwright`
+  - `asyncio`
+  - `json`
 
-Saves data in JSON format.
-Includes error handling for robust scraping.
-Asynchronous execution for efficiency.
+## Installation
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/naveenkumar-interns/Scrapping-resume-project.git
+   cd Scrapping-resume-project
+   ```
 
-Prerequisites
+2. **Set up a virtual environment** (optional):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-Python 3.8+
-Playwright and its browser binaries
-Required Python packages:
-playwright
-asyncio
-json
+3. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   playwright install
+   ```
 
+## Usage
+1. **Run a specific scraper**:
+   Navigate to the folder and execute the script. Example for Arc.dev:
+   ```bash
+   cd arc_dev
+   python arc_scraper.py
+   ```
+   Output is saved to `arc_jobs.json`.
 
+2. **Output**:
+   - Each script creates a JSON file (e.g., `arc_jobs.json`).
+   - Console displays job count and details.
 
-Installation
+3. **Run all scrapers**:
+   Execute manually or automate:
+   ```bash
+   cd arc_dev && python arc_scraper.py
+   cd ../general && python general_scraper.py
+   cd ../jobspresso && python jobspresso_scraper.py
+   cd ../pangian && python pangian_scraper.py
+   cd ../remotewoman && python remotewoman_scraper.py
+   cd ../weworkremotely && python weworkremotely_scraper.py
+   cd ../workingnomads && python workingnomads_scraper.py
+   ```
 
-Clone the repository:
-git clone https://github.com/naveenkumar-interns/job-scraping-project.git
-cd job-scraping-project
-
-
-Set up a virtual environment (optional):
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-
-Install dependencies:
-pip install -r requirements.txt
-playwright install  # Installs browser binaries
-
-
-
-Usage
-
-Run a specific scraper:Navigate to the respective folder and run the script. For example, for Arc.dev:
-cd arc_dev
-python arc_scraper.py
-
-This saves output to arc_jobs.json.
-
-Output:
-
-Each script generates a JSON file (e.g., arc_jobs.json) with scraped data.
-Console output shows the number of jobs scraped and their details.
-
-
-Running all scrapers:Execute each script manually or automate with a script:
-cd arc_dev && python arc_scraper.py
-cd ../general && python general_scraper.py
-cd ../jobspresso && python jobspresso_scraper.py
-cd ../pangian && python pangian_scraper.py
-cd ../remotewoman && python remotewoman_scraper.py
-cd ../weworkremotely && python weworkremotely_scraper.py
-cd ../workingnomads && python workingnomads_scraper.py
-
-
-
-Project Structure
+## Project Structure
+```
 job-scraping-project/
 ├── arc_dev/                # Scraper for Arc.dev
 │   └── arc_scraper.py
@@ -92,12 +89,11 @@ job-scraping-project/
 ├── workingnomads/          # Scraper for Working Nomads
 │   └── workingnomads_scraper.py
 ├── README.md               # Project documentation
-└── requirements.txt        # Project dependencies
+└── requirements.txt        # Dependencies
+```
 
-Notes
-
-Error Handling: Scripts skip problematic listings and continue.
-Headless Mode: Runs in headless mode by default (editable in scripts).
-Terms of Service: Respect target websites' policies; add delays if needed.
-Scalability: Add new scrapers by mirroring existing folder structure.
-
+## Notes
+- **Error Handling**: Skips problematic listings.
+- **Headless Mode**: Default is headless (editable in scripts).
+- **Terms of Service**: Respect website policies; add delays if needed.
+- **Scalability**: Add new scrapers with matching structure.
