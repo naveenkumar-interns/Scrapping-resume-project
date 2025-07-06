@@ -1,2 +1,8 @@
-
+httpx
+beautifulsoup4
+lxml
 playwright
+pydantic
+python-dateutil
+loguru
+pandas
